@@ -14,6 +14,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { TooltipProvider } from './components/ui/tooltip';
 import { ThemeProvider } from './contexts/theme-context';
 import { Toaster } from './components/ui/toaster';
+import { GlobalErrorBoundary } from './components/global-error-boundary';
 
 const queryClient = new QueryClient();
 
@@ -33,8 +34,10 @@ createInertiaApp({
             <QueryClientProvider client={queryClient}>
                 <ThemeProvider>
                     <TooltipProvider>
-                        <App {...props} />
-                        <Toaster />
+                        <GlobalErrorBoundary>
+                            <App {...props} />
+                            <Toaster />
+                        </GlobalErrorBoundary>
                     </TooltipProvider>
                 </ThemeProvider>
             </QueryClientProvider>
