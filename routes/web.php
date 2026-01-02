@@ -9,6 +9,10 @@ Route::get('/', function () {
     return Inertia::render('landing-page');
 })->name('home');
 
+Route::get('/probe', function () {
+    return '<h1>🟢 SYSTEM ALIVE</h1><p>The PHP server is responding. The issue is in the View/Vite layer.</p>';
+});
+
 Route::get('/terms', function () {
     return Inertia::render('terms-and-conditions');
 })->name('terms');
