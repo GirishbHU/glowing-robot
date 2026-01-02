@@ -19,7 +19,13 @@
         @vite(['resources/js/app.tsx'])
         @inertiaHead
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-slate-950 text-white">
+        <!-- Sanity Check: If you see this green text, HTML is loading -->
+        <div id="loading-check" style="position:fixed; top:0; left:0; z-index:9999; color:lime;">System Check: HTML Loaded</div>
         @inertia
+        <script>
+            console.log('🔍 Blade Template Loaded');
+            document.getElementById('loading-check').style.display = 'none'; // Auto-hide if JS runs
+        </script>
     </body>
 </html>

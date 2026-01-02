@@ -1,4 +1,5 @@
 import '../css/app.css';
+console.log('🚀 JS Entry Point: app.tsx loaded');
 import './bootstrap';
 
 import { createInertiaApp } from '@inertiajs/react';
